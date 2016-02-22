@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	
+	<meta name="author" content="harith" />
+
+	<title>Untitled 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+ function doMath()
+    {
+        // Capture the entered values of two input boxes
+        var my_input1 = document.getElementById('weight').value;
+        var my_input2 = document.getElementById('height').value;
+
+        // calculate them together and display
+        var sum = Math.round(my_input1 / Math.pow(my_input2,2) * 10000);
+        if(sum<=18.5){
+            alert("your BMI is "+ sum + ".Your are underweight");
+        }
+        else if(sum>18.6 && sum <= 25){
+            alert("your BMI is "+ sum + ".Your are normal");
+        }
+        else if(sum > 25){
+            
+            alert("your BMI is "+ sum + ".Your are overweight");
+        }
+        
+        document.write(sum);
+    }
+    </script>
+</head>
+
+<body>
+
+<div data-role="page">
+   
+
+	<div data-role="header" data-position="fixed" data-theme="a" id="home">
+		<h1>BMI CALCULATOR</h1>
+       
+	</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+		<form> <label for="text-basic">Your Weight:</label>
+            <input type="text" name="weight" id="weight" value="">
+         <label for="text-basic">Your Height:</label>
+         <input type="text" name="height" id="height" value="">
+        <button class="ui-shadow ui-btn ui-corner-all" onclick="doMath();" ">Calculate</button>
+        
+         </form>
+            
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Design by Harith</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+</body>
+</html>
